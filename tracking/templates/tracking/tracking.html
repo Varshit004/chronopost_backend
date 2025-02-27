@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronopost Tracking</title>
+</head>
+<body>
+    <body>
+        <h2>Track Your Chronopost Shipment</h2>
+        <p style="color: red;">If you see this, the template is loading correctly.</p>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <label for="tracking_number">Enter Tracking Number:</label>
+        <input type="text" id="tracking_number" name="tracking_number" required>
+        <button type="submit">Track</button>
+    </form>
+
+    {% if tracking_info %}
+        <h3>Tracking Details:</h3>
+        <p>{{ tracking_info }}</p>
+    {% endif %}
+</body>
+</html>
